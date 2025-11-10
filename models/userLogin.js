@@ -46,7 +46,7 @@ userSchema.statics.SignUp = async function (name, phone, email, score, questions
   }
 
   const user = await this.create({ name, phone,email, score, questionscore });
-
+  console.log(user, "user login 1");
   return user;
 };
 

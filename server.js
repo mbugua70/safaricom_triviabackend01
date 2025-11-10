@@ -20,6 +20,13 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+// middleware - registered BEFORE connecting to database
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use((req, res, next) => {
+  console.log(req.path, req.method);
+  next();
+});
 
 // connecting to the database
 
@@ -34,14 +41,6 @@ mongoose
     });
   })
   .catch((err) => console.log(err));
-
-// middleware
-app.use(express.json());
-app.use((req, res, next) => {
-  console.log(req.path, req.method);
-  next();
-});
-app.use(express.urlencoded({ extended: true }));
 
 // routes
 app.get("/", (req, res) => {

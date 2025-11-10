@@ -48,11 +48,12 @@ module.exports.signUpUser = async (req, res) => {
 
   try {
     const user = await UserModel.SignUp(name, phone,email, score);
-
+    console.log(user, "user login");
     const userId = user._id;
     const token = createToken(user._id);
     res.status(200).json({ userId, token });
   } catch (err) {
+    console.log(err, "error logs")
     const error = handleErrors(err);
     res.status(400).json({ error });
   }
