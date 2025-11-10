@@ -15,7 +15,7 @@ const createToken = ({ _id }) => {
 // handle error fun
 // handle errors
 const handleErrors = (err) => {
-  console.log(err);
+  console.log(err, "error happend");
 
   let errors = { phone: "", name: "", validate: "", played: "" };
 

@@ -14,12 +14,12 @@ const userSchema = new Schema(
       required: [true, "Please insert  name"],
     },
     phone: {
-      type: [Number, "Please enter the correct phone Number"],
+      type: Number,
       required: [true, "Please insert phone number"],
       unique: true,
     },
     email: {
-      type: [String, "Please enter the correct email"],
+      type: String,
       required: [true, "Please insert email"],
       unique: true,
     },
