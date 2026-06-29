@@ -8,7 +8,7 @@ const createToken = ({ _id }) => {
   // the first arguement is usually the payload
   // second arg is the secret string
   // third arg its an optional parameter
-  return jwt.sign({ _id }, process.env.SECRET_STRING, { expiresIn: "3d" });
+  return jwt.sign({ _id }, process.env.JWT_SECRET, { expiresIn: "3d" });
 };
 
 
