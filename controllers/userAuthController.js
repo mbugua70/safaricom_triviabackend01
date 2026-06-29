@@ -44,10 +44,10 @@ const handleErrors = (err) => {
 };
 
 module.exports.signUpUser = async (req, res) => {
-  const { name, phone,email, score } = req.body;
+  const { name, phone, score } = req.body;
 
   try {
-    const user = await UserModel.SignUp(name, phone,email, score);
+    const user = await UserModel.SignUp(name, phone, score);
     console.log(user, "user login");
     const userId = user._id;
     const token = createToken(user._id);
